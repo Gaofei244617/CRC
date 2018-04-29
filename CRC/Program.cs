@@ -11,12 +11,26 @@ namespace CRCTEST
             while (true)
             {
                 Console.Write("请输入数组长度：");
-                int n = Convert.ToInt32(Console.ReadLine());
+                int n;
+                try
+                {
+                    n = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("重新输入(请输入大于0的数字)...\n");
+                    continue;
+                }
+
                 dat = new byte[n];
 
-                Console.Write("请输入CRC校验数据：");
+                Console.Write("请输入CRC校验数据(以空格分隔)：");
                 string[] strs = Console.ReadLine().Split(' ');
-
+                if (strs.Length != n)
+                {
+                    Console.WriteLine("输入数据与数组长度不符，请重新输入...\n");
+                    continue;
+                }
                 //转换数据至byte[] dat
                 for (int i = 0; i < n; i++)
                 {
