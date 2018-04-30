@@ -47,8 +47,8 @@ namespace CRCTEST
 
                 crc.crcCheck(dat, n);
                 Console.WriteLine("CRC校验结果为:");
-                Console.WriteLine("LowByte: 0x{0:X}", crc.LowByte);
-                Console.WriteLine("HighByte: 0x{0:X}", crc.HighByte);
+                Console.WriteLine("LowByte: 0x{0:X2}", crc.LowByte);
+                Console.WriteLine("HighByte: 0x{0:X2}", crc.HighByte);
                 Console.Write("-----------------------------------------");
 
                 ////输出数据
